@@ -12,4 +12,9 @@ app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
+app.get("/secret", (req, res) => {
+  console.log("credential", process.env.USER);
+  res.end();
+})
+
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
